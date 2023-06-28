@@ -8,9 +8,11 @@ import Organizar from './pages/Organizar'
 import Ajuda from './pages/Ajuda'
 import NoPage from './pages/NoPage'
 import Status from './pages/Status';
+import { EmojiContextProvider } from './context/AppContext';
 
 export default function App() {
   return (
+    <EmojiContextProvider>
      <BrowserRouter>
       <Routes>
         <Route path="/" element={<Cabecalho />}>
@@ -23,5 +25,6 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </EmojiContextProvider>
   )
 }

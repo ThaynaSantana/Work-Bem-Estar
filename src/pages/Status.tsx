@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Calendario from "../component/Calendario";
 import EmotionMenu from "../component/EmotionMenu";
-import Profile from '../component/Profile'
+import Profile from "../component/Profile";
 
 const Status: React.FC = () => {
   const [currentEmotion, setCurrentEmotion] = useState<string>("");
@@ -11,11 +11,11 @@ const Status: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Como você está se sentindo hoje?</h1>
+    <div className="status-page">
+      <h1 id="title-status-page">Como você está se sentindo hoje?</h1>
       <EmotionMenu onSelectEmotion={handleEmotionSelect} />
       <Calendario />
-      <Profile />
+      <Profile currentEmotion={currentEmotion} />
     </div>
   );
 };

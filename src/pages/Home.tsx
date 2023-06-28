@@ -5,7 +5,7 @@ import Main from '../layout/Main'
 const Home = () => {
   return (
     <>
-      <Profile/>
+      <Profile />
       <Main />
       <Rodape />
     </>

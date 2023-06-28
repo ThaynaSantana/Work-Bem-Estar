@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import AppContext from "../context/AppContext";
 
-interface EmotionProps {
+export interface EmotionProps {
   status: string;
 }
 
 const Emotion: React.FC<EmotionProps> = ({ status }) => {
+  const {currentEmotion} = useContext(AppContext);
+
   enum emojis {
     bravo = "😡",
     triste = "😢",
@@ -13,9 +16,9 @@ const Emotion: React.FC<EmotionProps> = ({ status }) => {
     muitofeliz = "😆",
   }
 
-  let emoji = emojis.neutro;
+  let emoji = currentEmotion;
 
-  switch (status) {
+  switch (currentEmotion) {
     case "bravo":
       emoji = emojis.bravo;
       break;
@@ -35,7 +38,7 @@ const Emotion: React.FC<EmotionProps> = ({ status }) => {
       emoji = emojis.feliz;
   }
 
-  return <p>{emoji}</p>;
+  return <p id="emoji">{emoji}</p>;
 };
 
 export default Emotion;

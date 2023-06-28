@@ -1,16 +1,18 @@
-import React, { useState } from "react";
-import Emotion from "./Emotion";
+import React, { useContext } from "react";
+import { EmotionProps } from "./Emotion";
+import AppContext from "../context/AppContext";
 
-interface EmotionMenuProps {
-  onSelectEmotion: (emotion: string) => void;
+export interface EmotionMenuProps {
+  onSelectEmotion: (emotion: EmotionProps["status"]) => void;
 }
 
 const EmotionMenu: React.FC<EmotionMenuProps> = ({ onSelectEmotion }) => {
-  const [selectedEmotion, setSelectedEmotion] = useState("neutro");
+  const {setCurrentEmotion} = useContext(AppContext);
 
-  const handleEmotionSelect = (emotion: string) => {
-    setSelectedEmotion(emotion);
+  const handleEmotionSelect = (emotion: EmotionProps["status"]) => {
     onSelectEmotion(emotion);
+    setCurrentEmotion(emotion);
+    console.log(emotion)
   };
 
   return (
@@ -20,7 +22,6 @@ const EmotionMenu: React.FC<EmotionMenuProps> = ({ onSelectEmotion }) => {
       <button onClick={() => handleEmotionSelect("neutro")}>😐</button>
       <button onClick={() => handleEmotionSelect("feliz")}>😄</button>
       <button onClick={() => handleEmotionSelect("muito feliz")}>😆</button>
-      
     </div>
   );
 };

@@ -12,15 +12,15 @@ body{
 	background-color: #fafafa;
 	
 }
-
+/*radial-gradient(rgba(68, 255, 246, 0.404), rgb(77, 255, 196))*/
 header{
-	background-image: radial-gradient(rgba(68, 255, 246, 0.404), rgb(77, 255, 196));
+	background-image: linear-gradient(rgba(154, 255, 250, 0.404),rgba(119, 206, 218, 0.863));
 	padding: 30px;
 }
 
 #logo {
-	width: 10rem;
-	border-radius: 50%;
+	height: 20rem;
+	border-radius: 40;
 	
 }
 
@@ -70,6 +70,10 @@ main {
 	margin: 10px 100px;
 	font-size: small;
 
+}
+
+#title-main{
+	margin-top: 2rem;
 }
 
 footer{
@@ -202,4 +206,55 @@ li{
 
 .Cronograma {
 	padding: 5rem 20rem;
+}
+
+.emotion-menu {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	width: 70vw;
+	margin: 0 auto;
+	border-radius: 30%;
+	background-image: radial-gradient(rgb(44, 149, 255), #19e4e4);
+	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.349);
+}
+
+.emotion-menu button {
+	font-size: 7rem;
+	padding: 1rem;
+	border: none;
+	border-radius: 30%;
+	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.349);
+}
+
+.emotion-menu button:hover{
+	box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.349);
+}
+
+.emotion-menu button:active{
+	background-color: #66a3db;
+}
+
+.status-page{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+	background-image: url("https://static.vecteezy.com/system/resources/previews/006/617/113/original/cute-school-seamless-pattern-created-from-hand-drawn-doodles-on-white-background-wrapping-paper-textile-and-fabric-prints-wallpaper-stationery-scrapbook-etc-eps-10-vector.jpg");
+	background-repeat: repeat;
+	background-position: top;
+	height: 100vh;
+}
+
+#title-status-page {
+	margin-top: 1.5rem;
+	background-color: #4300df;
+	color: #fafafa;
+	padding: 1rem;
+	border-radius: 30px;
+	font-size: 4rem;
+	font-weight: bold;
 }

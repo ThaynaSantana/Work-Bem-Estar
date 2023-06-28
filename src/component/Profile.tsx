@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Emotion from "./Emotion";
+import Emotion, { EmotionProps } from "./Emotion";
 
-const Profile: React.FC = () => {
+interface ProfileProps {
+  currentEmotion?: string;
+}
+
+const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
   const [showMenu, setShowMenu] = useState(true);
   const [buttonStyle, setButtonStyle] = useState("exit-button");
+  
 
   const toggleMenu = () => {
     setShowMenu((prevState) => !prevState);
@@ -37,7 +42,7 @@ const Profile: React.FC = () => {
           <h3>Professora Senac</h3>
           <div className="status">
             <h2>Status:</h2>
-            <Emotion status="feliz" />
+            <Emotion status={currentEmotion ?? ''} />
           </div>
           <button className="btn btn-lg btn-info">
             <Link className="btn-perfil" to="/meditar">
