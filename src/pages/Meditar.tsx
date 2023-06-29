@@ -1,47 +1,41 @@
 import React, { useState, useEffect } from "react";
 
 const Meditar: React.FC = () => {
-  const [showInstructions, setShowInstructions] = useState(true);
-  const [showCountdown, setShowCountdown] = useState(false);
-  const [countdown, setCountdown] = useState(15);
+  const [steps, setSteps] = useState<string[]>([]);
+  const [countdown, setCountdown] = useState(0);
 
   useEffect(() => {
-    let timer;
-
-    if (showCountdown && countdown > 0) {
-      timer = setTimeout(() => {
+    if (countdown > 0) {
+      const timer = setTimeout(() => {
         setCountdown((prevCountdown) => prevCountdown - 1);
       }, 1000);
-    } else if (showCountdown && countdown === 0) {
-      setShowInstructions(true);
-      setShowCountdown(false);
+      return () => clearTimeout(timer);
+    } else if(steps.length > 0) {
       setCountdown(15);
     }
-
-    return () => clearTimeout(timer);
-  }, [showCountdown, countdown]);
+    
+  }, [countdown]);
 
   const startBreathing = () => {
-    setShowInstructions(false);
-    setShowCountdown(true);
     setCountdown(15);
+    setSteps(['Respirar...', 'Inspirar...','Respirar...'])
   };
 
   useEffect(() => {
-    if (!showInstructions && !showCountdown) {
+    const newSteps = steps.slice(1)
+    if (steps.length > 0) {
       const timeout = setTimeout(() => {
-        setShowInstructions(true);
+        setSteps(newSteps)
       }, 15000);
 
       return () => clearTimeout(timeout);
     }
-  }, [showInstructions, showCountdown]);
-
+  }, [steps]);
 
 
   return (
     <div>
-      {showInstructions && (
+      {steps.length == 0 && (
         <div className="meditar">
           <img className="img-fluid"
             src="https://cdn-icons-png.flaticon.com/512/3048/3048374.png"
@@ -51,16 +45,10 @@ const Meditar: React.FC = () => {
           <button className="btn btn-primary btn-lg" onClick={startBreathing}>Vamos começar</button>
         </div>
       )}
-      {showCountdown && (
+      {steps.length !== 0 && (
         <div className="meditar">
           <div>{countdown}</div> {/* Contador regressivo de 15 segundos */}
-          <p>Inspire...</p>
-        </div>
-      )}
-      {!showInstructions && !showCountdown && (
-        <div className="meditar">
-          <div>{countdown}</div> {/* Contador regressivo de 15 segundos */}
-          <p>Respire...</p>
+          <p>{steps[0]}</p>
         </div>
       )}
     </div>

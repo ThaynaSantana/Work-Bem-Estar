@@ -101,8 +101,12 @@ li{
 	right: 20px;
 	padding: 20px;
 	border-radius: 40px;
-	height: 290px;
+	height: 310px;
 	width: 300px;
+}
+
+#emoji {
+	font-size: 2rem;
 }
 
 .btn-perfil {
@@ -218,7 +222,7 @@ li{
 	margin: 0 auto;
 	border-radius: 30%;
 	background-image: radial-gradient(rgb(44, 149, 255), #19e4e4);
-	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.349);
+	box-shadow: 6px 8px 2rem rgba(0, 0, 0, 0.349);
 }
 
 .emotion-menu button {

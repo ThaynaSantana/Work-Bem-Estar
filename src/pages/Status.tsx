@@ -14,7 +14,6 @@ const Status: React.FC = () => {
     <div className="status-page">
       <h1 id="title-status-page">Como você está se sentindo hoje?</h1>
       <EmotionMenu onSelectEmotion={handleEmotionSelect} />
-      <Calendario />
       <Profile currentEmotion={currentEmotion} />
     </div>
   );

@@ -12,7 +12,6 @@ const EmotionMenu: React.FC<EmotionMenuProps> = ({ onSelectEmotion }) => {
   const handleEmotionSelect = (emotion: EmotionProps["status"]) => {
     onSelectEmotion(emotion);
     setCurrentEmotion(emotion);
-    console.log(emotion)
   };
 
   return (

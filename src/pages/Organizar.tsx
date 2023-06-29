@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Profile from '../component/Profile'
 
 interface ScheduleItem {
   id: number;
@@ -73,6 +74,8 @@ const Organizar: React.FC = () => {
   };
 
   return (
+    <>
+    <Profile />
     <div className="Cronograma">
       <h2>Cronograma</h2>
       <table className="table">
@@ -125,6 +128,7 @@ const Organizar: React.FC = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 
