@@ -262,3 +262,45 @@ li{
 	font-size: 4rem;
 	font-weight: bold;
 }
+
+.ajuda-p {
+	margin: 0 auto;
+	padding: 4rem 10rem;
+}
+
+.organizar-page{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.lista-container {
+	width: 50rem;
+}
+
+.table-lista {
+	min-width: 10rem;
+}
+
+.calendar-day.today {
+	position: relative;
+  }
+  
+  .calendar-day.today .circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 10px;
+	height: 10px;
+	background-color: pink;
+	border-radius: 50%;
+  }
+  
+  .calendar-day .circle {
+	display: none;
+  }
+  
