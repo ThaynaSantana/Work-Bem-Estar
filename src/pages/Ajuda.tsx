@@ -1,7 +1,7 @@
-import Cabecalho from '../component/Cabecalho'
+import Cabecalho from '../layout/Cabecalho'
 import Profile from '../component/Profile'
-import Rodape from '../component/Rodape'
-import Main from '../component/Main'
+import Rodape from '../layout/Rodape'
+import Main from '../layout/Main'
 
 const Ajuda = () => {
   return (
