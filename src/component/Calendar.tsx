@@ -58,7 +58,7 @@ const Calendar: React.FC = () => {
     return (
       <table className="table table-bordered calendar">
         <thead>
-          <tr>
+          <tr className="table table-danger">
             {weekdays.map((day) => (
               <th key={day}>{day}</th>
             ))}

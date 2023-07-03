@@ -1,27 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500&family=Montserrat:wght@300;400;700&display=swap');
 
-*{
+* {
 	margin: 0;
 	padding: 0;
 	font-family: 'Fira Sans', serif;
 }
 
 
-body{
+body {
 	background-color: #fafafa;
-	
+
 }
+
 /*radial-gradient(rgba(68, 255, 246, 0.404), rgb(77, 255, 196))*/
-header{
-	background-image: linear-gradient(rgba(154, 255, 250, 0.404),rgba(119, 206, 218, 0.863));
+header {
+	background-image: linear-gradient(rgba(154, 255, 250, 0.404), rgba(119, 206, 218, 0.863));
 	padding: 30px;
 }
 
 #logo {
 	height: 20rem;
 	border-radius: 40;
-	
+
 }
 
 .Nome {
@@ -38,12 +39,12 @@ h1 {
 	font-size: 3rem;
 }
 
-h2{
+h2 {
 	margin-top: 2rem;
 	font-size: 2rem;
 }
 
-p{
+p {
 	font-size: 1.3rem;
 }
 
@@ -52,11 +53,11 @@ nav {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center	;
+	justify-content: center;
 	gap: 10px;
 }
 
-nav a{
+nav a {
 	background-color: #2600fcb0;
 	padding: 5px 20px;
 	text-decoration: none;
@@ -72,11 +73,11 @@ main {
 
 }
 
-#title-main{
+#title-main {
 	margin-top: 2rem;
 }
 
-footer{
+footer {
 	background-color: gainsboro;
 	display: flex;
 	justify-content: center;
@@ -86,12 +87,12 @@ footer{
 }
 
 
-li{
+li {
 	color: rgb(56, 56, 239);
 	font-size: 1.5rem;
 }
 
-.perfil{
+.perfil {
 	position: fixed;
 	display: flex;
 	background-image: linear-gradient(rgba(255, 255, 255, 0.692), rgba(18, 172, 95, 0.699));
@@ -115,19 +116,19 @@ li{
 	font-weight: bolder;
 }
 
-#avatar{
+#avatar {
 	width: 60px;
 	margin: 0 0 12px 0;
 }
 
-.status{
+.status {
 	display: flex;
 	justify-content: left;
 	align-items: center;
 	vertical-align: center;
 }
 
-#status{
+#status {
 	width: 40px;
 	margin-bottom: 10px;
 }
@@ -142,7 +143,8 @@ li{
 	right: 30px;
 }
 
-.exit-button, .open-button {
+.exit-button,
+.open-button {
 	position: fixed;
 	z-index: 1;
 	top: 40px;
@@ -160,7 +162,8 @@ li{
 	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.349);
 }
 
-.exit-button:hover, .open-button {
+.exit-button:hover,
+.open-button {
 	color: rgb(255, 255, 255);
 	box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.349);
 }
@@ -233,15 +236,15 @@ li{
 	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.349);
 }
 
-.emotion-menu button:hover{
+.emotion-menu button:hover {
 	box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.349);
 }
 
-.emotion-menu button:active{
+.emotion-menu button:active {
 	background-color: #66a3db;
 }
 
-.status-page{
+.status-page {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -268,17 +271,17 @@ li{
 	padding: 4rem 10rem;
 }
 
-.organizar-page{
+.organizar-page {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	gap: 1rem;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	
+	padding: 4rem;
 }
 
 .lista-container {
-	width: 50rem;
+	width: 30rem;
 }
 
 .table-lista {
@@ -287,20 +290,37 @@ li{
 
 .calendar-day.today {
 	position: relative;
-  }
-  
-  .calendar-day.today .circle {
+}
+
+.calendar-day.today .circle {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 25%;
+	left: 80%;
 	transform: translate(-50%, -50%);
 	width: 10px;
 	height: 10px;
-	background-color: pink;
+	background-color: rgb(255, 16, 56);
 	border-radius: 50%;
-  }
-  
-  .calendar-day .circle {
-	display: none;
-  }
-  
+	color: white;
+}
+
+.calendar-day .circle {
+	display: block;
+	padding: 0.3rem;
+	color: white;
+}
+
+.icon{
+	fill: #ffffff;
+}
+
+.noticias {
+	padding: 1rem 15rem;
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+.noticias article {
+
+}

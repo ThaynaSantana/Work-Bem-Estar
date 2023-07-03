@@ -75,39 +75,42 @@ const Organizar: React.FC = () => {
   };
 
   return (
-    <div className="organizar-page" >
-      <h1>Se Organize!</h1>
+    <div className="organizar-page">
       <div className="calendar-container">
         <Calendar />
       </div>
-      <div className="lista-container">
-        <ListaTodo todos={todos} deleteTodoItem={deleteTodoItem} />
+      <div className="tarefas">
+        <div className="lista-container">
+          <ListaTodo todos={todos} deleteTodoItem={deleteTodoItem} />
+        </div>
+        <div className="agendar-container">
+          <h2>Agendar Tarefas</h2>
+          {validationError && <p className="text-danger error-message">Hora inválida</p>}
+          <div className="input-container">
+            <label htmlFor="timeInput">Hora:</label>
+            <input
+              type="text"
+              id="timeInput"
+              className="form-control"
+              value={newTime}
+              onChange={handleTimeChange}
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="taskInput">Tarefa:</label>
+            <input
+              type="text"
+              id="taskInput"
+              className="form-control"
+              value={newTask}
+              onChange={handleTaskChange}
+            />
+          </div>
+          <button className="btn btn-outline-primary btn-lg btn-block" onClick={addTodoItem}>
+            Adicionar
+          </button>
+        </div>
       </div>
-      <h2>Agendar Tarefas</h2>
-      {validationError && <p className="error-message">Hora inválida</p>}
-      <div className="input-container">
-        <label htmlFor="timeInput">Hora:</label>
-        <input
-          type="text"
-          id="timeInput"
-          className="form-control"
-          value={newTime}
-          onChange={handleTimeChange}
-        />
-      </div>
-      <div className="input-container">
-        <label htmlFor="taskInput">Tarefa:</label>
-        <input
-          type="text"
-          id="taskInput"
-          className="form-control"
-          value={newTask}
-          onChange={handleTaskChange}
-        />
-      </div>
-      <button className="btn btn-primary" onClick={addTodoItem}>
-        Adicionar
-      </button>
     </div>
   );
 };
