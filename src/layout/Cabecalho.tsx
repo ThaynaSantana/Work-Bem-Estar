@@ -8,7 +8,7 @@ const Cabecalho = () => {
   				<img id="logo" src="marca3.png"></img>
   			</div>
   			<nav>
-  				<Link to="/">Novidades</Link>
+  				<Link to="/">Noticias</Link>
 				<Link to="/sentimentos">Sentir</Link>
   				<Link to="/meditar">Meditar</Link>
   				<Link to="/organizar">Organizar</Link>

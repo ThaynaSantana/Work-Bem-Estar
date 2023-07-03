@@ -1,45 +1,46 @@
 import React, { useState, useEffect } from "react";
-import Profile from '../component/Profile'
+import Calendar from "../component/Calendar";
+import ListaTodo from "../component/ListaTodo";
 
-interface ScheduleItem {
+interface TodoItem {
   id: number;
   time: string;
   task: string;
 }
 
 const Organizar: React.FC = () => {
-  const [schedule, setSchedule] = useState<ScheduleItem[]>([]);
+  const [todos, setTodos] = useState<TodoItem[]>([]);
   const [newTime, setNewTime] = useState("");
   const [newTask, setNewTask] = useState("");
   const [validationError, setValidationError] = useState(false);
 
   useEffect(() => {
-    const savedSchedule = localStorage.getItem("schedule");
-    if (savedSchedule) {
-      setSchedule(JSON.parse(savedSchedule));
+    const savedTodos = localStorage.getItem("todos");
+    if (savedTodos) {
+      setTodos(JSON.parse(savedTodos));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("schedule", JSON.stringify(schedule));
-  }, [schedule]);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
-  const addScheduleItem = () => {
+  const addTodoItem = () => {
     if (newTime && newTask && !validationError) {
-      const newItem: ScheduleItem = {
+      const newItem: TodoItem = {
         id: Date.now(),
         time: newTime,
         task: newTask,
       };
-      setSchedule((prevSchedule) => [...prevSchedule, newItem]);
+      setTodos((prevTodos) => [...prevTodos, newItem]);
       setNewTime("");
       setNewTask("");
     }
   };
 
-  const deleteScheduleItem = (itemId: number) => {
-    setSchedule((prevSchedule) =>
-      prevSchedule.filter((item) => item.id !== itemId)
+  const deleteTodoItem = (itemId: number) => {
+    setTodos((prevTodos) =>
+      prevTodos.filter((item) => item.id !== itemId)
     );
   };
 
@@ -74,61 +75,43 @@ const Organizar: React.FC = () => {
   };
 
   return (
-    <>
-    <Profile />
-    <div className="Cronograma">
-      <h2>Cronograma</h2>
-      <table className="table">
-        <thead className="table-dark">
-          <tr>
-            <th scope="col">Hora</th>
-            <th scope="col">Tarefa</th>
-            <th scope="col">Ação</th>
-          </tr>
-        </thead>
-        <tbody>
-          {schedule.map((item) => (
-            <tr key={item.id}>
-              <td>{item.time}</td>
-              <td>{item.task}</td>
-              <td>
-                <button
-                  className="btn btn-success"
-                  onClick={() => deleteScheduleItem(item.id)}
-                >
-                  Feito
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div>
-        <h3>Adicionar Tarefa</h3>
-        <div className="mb-3">
-          <label className="form-label">Hora:</label>
-          <input
-            type="text"
-            className="form-control"
-            value={newTime}
-            onChange={handleTimeChange}
-          />
+    <div className="organizar-page">
+      <div className="calendar-container">
+        <Calendar />
+      </div>
+      <div className="tarefas">
+        <div className="lista-container">
+          <ListaTodo todos={todos} deleteTodoItem={deleteTodoItem} />
         </div>
-        <div className="mb-3">
-          <label className="form-label">Tarefa:</label>
-          <input
-            type="text"
-            className="form-control"
-            value={newTask}
-            onChange={handleTaskChange}
-          />
+        <div className="agendar-container">
+          <h2>Agendar Tarefas</h2>
+          {validationError && <p className="text-danger error-message">Hora inválida</p>}
+          <div className="input-container">
+            <label htmlFor="timeInput">Hora:</label>
+            <input
+              type="text"
+              id="timeInput"
+              className="form-control"
+              value={newTime}
+              onChange={handleTimeChange}
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="taskInput">Tarefa:</label>
+            <input
+              type="text"
+              id="taskInput"
+              className="form-control"
+              value={newTask}
+              onChange={handleTaskChange}
+            />
+          </div>
+          <button className="btn btn-outline-primary btn-lg btn-block" onClick={addTodoItem}>
+            Adicionar
+          </button>
         </div>
-        <button className="btn btn-primary" onClick={addScheduleItem}>
-          Adicionar
-        </button>
       </div>
     </div>
-    </>
   );
 };
 
