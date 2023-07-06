@@ -1,4 +1,4 @@
-![image](https://github.com/ThaynaSantana/Work-Bem-Estar/assets/88935936/da01ca47-5455-413e-bd72-a67be2508cb0)
+![image](https://github.com/ThaynaSantana/Work-Bem-Estar/assets/88935936/3c324f1f-a843-4e01-b330-a260f962e078)
 
 # Work Bem-estar
 🎯 Funções do Website Work Bem-estar 🌟
