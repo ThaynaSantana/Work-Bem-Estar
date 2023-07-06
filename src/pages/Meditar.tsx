@@ -11,13 +11,13 @@ const Meditar: React.FC = () => {
       }, 1000);
       return () => clearTimeout(timer);
     } else if(steps.length > 0) {
-      setCountdown(15);
+      setCountdown(5);
     }
     
   }, [countdown]);
 
   const startBreathing = () => {
-    setCountdown(15);
+    setCountdown(5);
     setSteps(['Respirar...', 'Inspirar...','Respirar...'])
   };
 
@@ -26,18 +26,19 @@ const Meditar: React.FC = () => {
     if (steps.length > 0) {
       const timeout = setTimeout(() => {
         setSteps(newSteps)
-      }, 15000);
+      }, 5000);
 
       return () => clearTimeout(timeout);
     }
   }, [steps]);
 
+  
 
   return (
     <div>
       {steps.length == 0 && (
         <div className="meditar">
-          <img className="img-fluid"
+          <img id='icon-meditar' className="img-fluid"
             src="https://cdn-icons-png.flaticon.com/512/3048/3048374.png"
             alt="Imagem Relaxante"
           />
@@ -47,7 +48,7 @@ const Meditar: React.FC = () => {
       )}
       {steps.length !== 0 && (
         <div className="meditar">
-          <div>{countdown}</div> {/* Contador regressivo de 15 segundos */}
+          <div className="countdown">{countdown}</div> {/* Contador regressivo de 15 segundos */}
           <p>{steps[0]}</p>
         </div>
       )}
