@@ -4,6 +4,7 @@ import axios from 'axios';
 interface NewsArticle {
   title: string;
   description: string;
+  content: string;
   source: {
     name: string;
   };
@@ -16,8 +17,13 @@ const Noticias: React.FC = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const query = "+controle+emocional+trabalho"
-        const response = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=abd29d5652914c009f8d43bd4792dce7`);
+        const query = "saude mental OR controle emocional OR trabalho"
+        const response = await axios.get(`https://gnews.io/api/v4/search`,{params: {
+          q: query,
+          lang: 'pt',
+          max: 10,
+          apikey: '3d3a6ba5d7e2f5de2f62c5e02f7ff44e',
+        }});
         setNews(response.data.articles);
       } catch (error) {
         console.error('Failed to fetch news:', error);
@@ -40,7 +46,7 @@ const Noticias: React.FC = () => {
           {news.map((article, index) => (
             <article key={index}>
               <h3>{article.title}</h3>
-              <p>{article.description}</p>
+              <p>{article.content}</p>
               <p>Fonte: {article.source.name}</p>
               <button className='btn btn-info btn-lg col-12' onClick={() => openArticleInNewTab(article.url)}>Leia Mais</button>
             </article>

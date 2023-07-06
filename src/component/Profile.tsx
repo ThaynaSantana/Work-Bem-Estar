@@ -35,7 +35,8 @@ const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
         <div className="perfil">
           <img
             id="avatar"
-            src="https://cdn-icons-png.flaticon.com/512/2920/2920072.png"
+            src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/afro_woman_female_person-256.png"
+            //src="https://cdn-icons-png.flaticon.com/512/2920/2920072.png"
             alt="Avatar"
           />
           <h2>Elis Menezes</h2>
