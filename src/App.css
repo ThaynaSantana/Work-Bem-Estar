@@ -324,3 +324,21 @@ li {
 	flex-direction: column;
 	gap: 4rem;
 }
+
+.noticias article{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: left;
+}
+
+.noticias .image {
+	width: 55rem;
+	height: 20rem;
+	object-fit: cover;
+	object-position: 30% 50%;
+	border-radius: 5%;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.349);
+	margin: 1.5rem 0;
+}

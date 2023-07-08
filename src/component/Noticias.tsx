@@ -5,6 +5,7 @@ interface NewsArticle {
   title: string;
   description: string;
   content: string;
+  image: string;
   source: {
     name: string;
   };
@@ -45,6 +46,7 @@ const Noticias: React.FC = () => {
         <div className='noticias'>
           {news.map((article, index) => (
             <article key={index}>
+              <img className='image' src={article.image}></img>
               <h3>{article.title}</h3>
               <p>{article.content}</p>
               <p>Fonte: {article.source.name}</p>
