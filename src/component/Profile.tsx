@@ -39,7 +39,7 @@ const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
               <h2>BARRA</h2>
               <Emotion status={currentEmotion ?? ""} />
             </div>
-            <button className="btn btn-lg btn-info">
+            <button>
               <Link className="btn-perfil" to="/meditar">
                 Respire!
               </Link>
@@ -47,7 +47,7 @@ const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
           </div>
           <img
             id="avatar"
-            src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/afro_woman_female_person-256.png"
+            src="https://i.ibb.co/RvfWQJY/unnamed.jpg"
             alt="Avatar"
           />
         </div>
