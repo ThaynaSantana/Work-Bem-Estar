@@ -5,7 +5,7 @@ const Cabecalho = () => {
       <>
       <header>
           <div className="Nome">
-  				<img id="logo" src="marca3.png"></img>
+  				<img id="logo" src="https://i.ibb.co/qNP3Zwq/MARCA-E-APLICA-ES-WORK-BEM-ESTAR.png"></img>
   			</div>
   			<nav>
   				<Link to="/">Noticias</Link>

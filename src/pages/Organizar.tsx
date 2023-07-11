@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Calendar from "../component/Calendar";
 import ListaTodo from "../component/ListaTodo";
+import Profile from "../component/Profile";
 
 interface TodoItem {
   id: number;
@@ -39,9 +40,7 @@ const Organizar: React.FC = () => {
   };
 
   const deleteTodoItem = (itemId: number) => {
-    setTodos((prevTodos) =>
-      prevTodos.filter((item) => item.id !== itemId)
-    );
+    setTodos((prevTodos) => prevTodos.filter((item) => item.id !== itemId));
   };
 
   const handleTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -75,43 +74,51 @@ const Organizar: React.FC = () => {
   };
 
   return (
-    <div className="organizar-page">
-      <div className="calendar-container">
-        <Calendar />
-      </div>
-      <div className="tarefas">
-        <div className="lista-container">
-          <ListaTodo todos={todos} deleteTodoItem={deleteTodoItem} />
+    <>
+      <Profile />
+      <div className="organizar-page">
+        <div className="calendar-container">
+          <Calendar />
         </div>
-        <div className="agendar-container">
-          <h2>Agendar Tarefas</h2>
-          {validationError && <p className="text-danger error-message">Hora inválida</p>}
-          <div className="input-container">
-            <label htmlFor="timeInput">Hora:</label>
-            <input
-              type="text"
-              id="timeInput"
-              className="form-control"
-              value={newTime}
-              onChange={handleTimeChange}
-            />
+        <div className="tarefas">
+          <div className="lista-container">
+            <ListaTodo todos={todos} deleteTodoItem={deleteTodoItem} />
           </div>
-          <div className="input-container">
-            <label htmlFor="taskInput">Tarefa:</label>
-            <input
-              type="text"
-              id="taskInput"
-              className="form-control"
-              value={newTask}
-              onChange={handleTaskChange}
-            />
+          <div className="agendar-container">
+            <h2>Agendar Tarefas</h2>
+            {validationError && (
+              <p className="text-danger error-message">Hora inválida</p>
+            )}
+            <div className="input-container">
+              <label htmlFor="timeInput">Hora:</label>
+              <input
+                type="text"
+                id="timeInput"
+                className="form-control"
+                value={newTime}
+                onChange={handleTimeChange}
+              />
+            </div>
+            <div className="input-container">
+              <label htmlFor="taskInput">Tarefa:</label>
+              <input
+                type="text"
+                id="taskInput"
+                className="form-control"
+                value={newTask}
+                onChange={handleTaskChange}
+              />
+            </div>
+            <button
+              className="btn btn-outline-primary btn-lg btn-block"
+              onClick={addTodoItem}
+            >
+              Adicionar
+            </button>
           </div>
-          <button className="btn btn-outline-primary btn-lg btn-block" onClick={addTodoItem}>
-            Adicionar
-          </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

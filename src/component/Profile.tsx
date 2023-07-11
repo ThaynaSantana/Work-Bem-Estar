@@ -36,14 +36,12 @@ const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
             <h3>Olá, Elis Menezes!</h3>
             <p>Educadora Senac</p>
             <div className="status">
-              <h2>BARRA</h2>
+              <meter min="1" max="5" value="4"></meter>
               <Emotion status={currentEmotion ?? ""} />
             </div>
-            <button>
-              <Link className="btn-perfil" to="/meditar">
-                Respire!
-              </Link>
-            </button>
+            <Link className="btn-perfil" to="/meditar">
+              <button>Respire!</button>
+            </Link>
           </div>
           <img
             id="avatar"

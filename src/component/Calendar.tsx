@@ -2,7 +2,8 @@ import React from "react";
 
 const Calendar: React.FC = () => {
   const today = new Date();
-  const currentMonth = today.toLocaleString("default", { month: "long" });
+  const currentMonth = today
+    .toLocaleString("default", { month: "long" });
   const currentYear = today.getFullYear();
 
   const daysInMonth = (month: number, year: number) => {
@@ -17,7 +18,7 @@ const Calendar: React.FC = () => {
     const monthLength = daysInMonth(today.getMonth(), today.getFullYear());
     const startDay = firstDayOfMonth(today.getMonth(), today.getFullYear());
 
-    const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const weekdays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
 
     const calendarDays: JSX.Element[] = [];
 
@@ -40,7 +41,9 @@ const Calendar: React.FC = () => {
     const totalCells = Math.ceil((startDay + monthLength) / 7) * 7;
 
     while (calendarDays.length < totalCells) {
-      calendarDays.push(<td key={`empty-${calendarDays.length}`} className="empty-cell"></td>);
+      calendarDays.push(
+        <td key={`empty-${calendarDays.length}`} className="empty-cell"></td>
+      );
     }
 
     const weeks: JSX.Element[][] = [];
@@ -56,7 +59,7 @@ const Calendar: React.FC = () => {
     });
 
     return (
-      <table className="table table-bordered calendar">
+      <table className="table calendar">
         <thead>
           <tr className="table table-danger">
             {weekdays.map((day) => (
