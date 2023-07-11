@@ -347,6 +347,13 @@ table {
   border: none;
 }
 
+.calendar-tarefas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 20rem;
+}
+
 .calendar-day.today {
   position: relative;
 }

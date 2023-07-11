@@ -77,13 +77,13 @@ const Organizar: React.FC = () => {
     <>
       <Profile />
       <div className="organizar-page">
-        <div className="calendar-container">
+        <div className="calendar-tarefas-container">
           <Calendar />
-        </div>
-        <div className="tarefas">
           <div className="lista-container">
             <ListaTodo todos={todos} deleteTodoItem={deleteTodoItem} />
           </div>
+        </div>
+        <div className="tarefas">
           <div className="agendar-container">
             <h2>Agendar Tarefas</h2>
             {validationError && (
