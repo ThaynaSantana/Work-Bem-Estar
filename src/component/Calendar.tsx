@@ -2,8 +2,7 @@ import React from "react";
 
 const Calendar: React.FC = () => {
   const today = new Date();
-  const currentMonth = today
-    .toLocaleString("default", { month: "long" });
+  const currentMonth = today.toLocaleString("default", { month: "long" });
   const currentYear = today.getFullYear();
 
   const daysInMonth = (month: number, year: number) => {
