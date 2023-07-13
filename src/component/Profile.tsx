@@ -40,7 +40,15 @@ const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
               <Emotion status={currentEmotion ?? ""} />
             </div>
             <Link className="btn-perfil" to="/meditar">
-              <button className="btn btn-primary">Respire!</button>
+              <button
+                className="btn btn-primary"
+                ata-mdb-toggle="animation"
+                data-mdb-animation-reset="true"
+                data-mdb-animation="pulse"
+                data-mdb-animation-start="onHover"
+              >
+                Respire!
+              </button>
             </Link>
           </div>
           <img
