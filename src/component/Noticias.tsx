@@ -50,7 +50,7 @@ const Noticias: React.FC = () => {
               <h3>{article.title}</h3>
               <p>{article.content}</p>
               <p>Fonte: {article.source.name}</p>
-              <button className='btn btn-info btn-lg col-12' onClick={() => openArticleInNewTab(article.url)}>Leia Mais</button>
+              <button className='btn btn-primary btn-lg col-12' onClick={() => openArticleInNewTab(article.url)}>Leia Mais</button>
             </article>
           ))}
         </div>

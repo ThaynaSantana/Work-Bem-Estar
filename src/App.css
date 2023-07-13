@@ -12,10 +12,11 @@ body {
 
 header {
   background-color: white;
-  padding: 30px;
+  padding: 5rem 1.875rem 0 1.875rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border-bottom: 0.5rem solid #63f2be;
 }
 
 #logo {
@@ -101,7 +102,7 @@ main #circle {
   width: 20rem;
   border-radius: 2rem;
   font-weight: 600;
-  background-color: #63f2be;
+
   border: none;
 }
 
@@ -110,8 +111,37 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   padding: 2rem;
+  gap: 3rem;
+}
+
+footer h1 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+footer #inicio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+footer #inicio a {
+  text-decoration: none;
+}
+
+footer #sobre {
+  display: flex;
+  flex-direction: column;
+}
+
+footer #sobre label {
+  font-size: 1.2rem;
+}
+
+footer #sobre p {
+  font-size: 0.9rem;
 }
 
 li {
@@ -126,7 +156,7 @@ li {
     rgba(255, 255, 255, 0.692),
     rgba(129, 141, 135, 0.767)
   );
-  box-shadow: 0.5rem 1rem 3rem rgba(0, 0, 0, 0.349);
+  box-shadow: 0.5rem 0.7rem 2rem rgba(0, 0, 0, 0.253);
   flex-direction: row;
   top: 20px;
   right: 20px;
@@ -175,12 +205,16 @@ li {
 }
 
 .perfil button {
-  background-color: #5ad4a7;
+  /* background-color: #5ad4a7; */
   padding: 0.5rem 2rem;
   border-radius: 3rem;
   border: none;
   font-weight: bolder;
   color: #fafafa;
+}
+
+.perfil button:hover {
+  background-color: #4ec79a;
 }
 
 #status {
@@ -335,6 +369,15 @@ li {
   padding: 4rem;
 }
 
+input[type="text"] {
+  border-radius: 2rem;
+  background-color: rgb(221, 221, 221);
+}
+
+input[type="text"]:focus {
+  background-color: rgb(245, 245, 245);
+}
+
 .lista-container {
   width: 30rem;
 }
@@ -361,7 +404,7 @@ table {
 .calendar-day.today.today {
   display: block;
   color: white;
-  background-color: rgb(221, 23, 56);
+  background-color: rgba(221, 23, 56, 0.836);
   margin: 2px;
   border-radius: 50%;
   font-weight: bold;
@@ -399,6 +442,25 @@ table {
 
 .agendar-container {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 2rem;
+}
+
+.agendar-container h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.agendar-container button {
+  width: 12rem;
+  font-size: 1.6rem;
+  margin: 0 1rem;
+}
+
+#listatodo-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }

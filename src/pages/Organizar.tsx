@@ -79,42 +79,41 @@ const Organizar: React.FC = () => {
       <div className="organizar-page">
         <div className="calendar-tarefas-container">
           <Calendar />
+        </div>
+        <div>
           <div className="lista-container">
             <ListaTodo todos={todos} deleteTodoItem={deleteTodoItem} />
           </div>
-        </div>
-        <div className="tarefas">
-          <div className="agendar-container">
-            <h2>Agendar Tarefas</h2>
-            {validationError && (
-              <p className="text-danger error-message">Hora inválida</p>
-            )}
-            <div className="input-container">
-              <label htmlFor="timeInput">Hora:</label>
-              <input
-                type="text"
-                id="timeInput"
-                className="form-control"
-                value={newTime}
-                onChange={handleTimeChange}
-              />
+          <div className="tarefas">
+            <div className="agendar-container">
+              <h2>Agendar Tarefas</h2>
+              {validationError && (
+                <p className="text-danger error-message">Hora inválida</p>
+              )}
+              <div className="input-container">
+                <label htmlFor="timeInput">Hora:</label>
+                <input
+                  type="text"
+                  id="timeInput"
+                  className="form-control"
+                  value={newTime}
+                  onChange={handleTimeChange}
+                />
+              </div>
+              <div className="input-container">
+                <label htmlFor="taskInput">Tarefa:</label>
+                <input
+                  type="text"
+                  id="taskInput"
+                  className="form-control"
+                  value={newTask}
+                  onChange={handleTaskChange}
+                />
+              </div>
+              <button className="btn btn-outline-success" onClick={addTodoItem}>
+                Adicionar
+              </button>
             </div>
-            <div className="input-container">
-              <label htmlFor="taskInput">Tarefa:</label>
-              <input
-                type="text"
-                id="taskInput"
-                className="form-control"
-                value={newTask}
-                onChange={handleTaskChange}
-              />
-            </div>
-            <button
-              className="btn btn-outline-primary btn-lg btn-block"
-              onClick={addTodoItem}
-            >
-              Adicionar
-            </button>
           </div>
         </div>
       </div>

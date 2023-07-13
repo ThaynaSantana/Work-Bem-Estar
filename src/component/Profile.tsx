@@ -40,7 +40,7 @@ const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
               <Emotion status={currentEmotion ?? ""} />
             </div>
             <Link className="btn-perfil" to="/meditar">
-              <button>Respire!</button>
+              <button className="btn btn-primary">Respire!</button>
             </Link>
           </div>
           <img

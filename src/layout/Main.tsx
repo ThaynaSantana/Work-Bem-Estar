@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Main = () => {
   return (
     <main>
@@ -6,7 +8,9 @@ const Main = () => {
           AVANCE COM SUA<br></br> PRODUTIVIDADE<br></br> COM AS<br></br>{" "}
           FERRAMENTAS<br></br> CERTAS
         </h3>
-        <button className="btn btn-success">Agende suas tarefas</button>
+        <Link to="/organizar">
+          <button className="btn btn-primary">Agende suas tarefas</button>
+        </Link>
       </div>
     </main>
   );

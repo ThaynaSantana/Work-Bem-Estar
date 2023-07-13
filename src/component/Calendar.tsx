@@ -86,7 +86,7 @@ const Calendar: React.FC = () => {
 
   return (
     <div className="calendar-container">
-      <h2>{`${currentMonth} ${currentYear}`}</h2>
+      <h2 className="text-capitalize">{`${currentMonth} ${currentYear}`}</h2>
       {renderCalendar()}
     </div>
   );
