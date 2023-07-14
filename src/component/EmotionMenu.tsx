@@ -7,7 +7,7 @@ export interface EmotionMenuProps {
 }
 
 const EmotionMenu: React.FC<EmotionMenuProps> = ({ onSelectEmotion }) => {
-  const {setCurrentEmotion} = useContext(AppContext);
+  const { setCurrentEmotion } = useContext(AppContext);
 
   const handleEmotionSelect = (emotion: EmotionProps["status"]) => {
     onSelectEmotion(emotion);
@@ -16,11 +16,26 @@ const EmotionMenu: React.FC<EmotionMenuProps> = ({ onSelectEmotion }) => {
 
   return (
     <div className="emotion-menu">
-      <button onClick={() => handleEmotionSelect("bravo")}>😡</button>
-      <button onClick={() => handleEmotionSelect("triste")}>😢</button>
-      <button onClick={() => handleEmotionSelect("neutro")}>😐</button>
-      <button onClick={() => handleEmotionSelect("feliz")}>😄</button>
-      <button onClick={() => handleEmotionSelect("muito feliz")}>😆</button>
+      <div className="emoji">
+        <button onClick={() => handleEmotionSelect("bravo")}>😡</button>
+        <label>Raiva</label>
+      </div>
+      <div className="emoji">
+        <button onClick={() => handleEmotionSelect("triste")}>😢</button>
+        <label>Triste</label>
+      </div>
+      <div className="emoji">
+        <button onClick={() => handleEmotionSelect("neutro")}>😐</button>
+        <label>Neutro</label>
+      </div>
+      <div className="emoji">
+        <button onClick={() => handleEmotionSelect("feliz")}>😄</button>
+        <label>Feliz</label>
+      </div>
+      <div className="emoji">
+        <button onClick={() => handleEmotionSelect("muito feliz")}>😆</button>
+        <label>Muito Feliz!</label>
+      </div>
     </div>
   );
 };

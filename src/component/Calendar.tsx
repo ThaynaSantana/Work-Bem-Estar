@@ -17,7 +17,7 @@ const Calendar: React.FC = () => {
     const monthLength = daysInMonth(today.getMonth(), today.getFullYear());
     const startDay = firstDayOfMonth(today.getMonth(), today.getFullYear());
 
-    const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const weekdays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
 
     const calendarDays: JSX.Element[] = [];
 
@@ -40,7 +40,9 @@ const Calendar: React.FC = () => {
     const totalCells = Math.ceil((startDay + monthLength) / 7) * 7;
 
     while (calendarDays.length < totalCells) {
-      calendarDays.push(<td key={`empty-${calendarDays.length}`} className="empty-cell"></td>);
+      calendarDays.push(
+        <td key={`empty-${calendarDays.length}`} className="empty-cell"></td>
+      );
     }
 
     const weeks: JSX.Element[][] = [];
@@ -56,7 +58,7 @@ const Calendar: React.FC = () => {
     });
 
     return (
-      <table className="table table-bordered calendar">
+      <table className="table calendar">
         <thead>
           <tr className="table table-danger">
             {weekdays.map((day) => (
@@ -84,7 +86,7 @@ const Calendar: React.FC = () => {
 
   return (
     <div className="calendar-container">
-      <h2>{`${currentMonth} ${currentYear}`}</h2>
+      <h2 className="text-capitalize">{`${currentMonth} ${currentYear}`}</h2>
       {renderCalendar()}
     </div>
   );

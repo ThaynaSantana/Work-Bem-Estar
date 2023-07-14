@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Calendario from "../component/Calendar";
 import EmotionMenu from "../component/EmotionMenu";
 import Profile from "../component/Profile";
 
