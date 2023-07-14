@@ -22,16 +22,19 @@ const Ajuda = () => {
         Para entrar em contato com o CVV:<br></br>
         <br></br>
         <ul>
-          <li className="text-success">
-            Ligue para <a href="tel:+55188">188</a> ligação gratuita e sigilosa
-          </li>
-          <li className="text-success">Envie um email para cvv@cvv.org.br</li>
-          <li className="text-warning">
-            Acesse o chat no site{" "}
-            <a target="_blank" href="https://www.cvv.org.br">
-              AQUI
-            </a>
-          </li>
+          <strong>
+            <li className="text-success">
+              Ligue para <a href="tel:+55188">188</a> ligação gratuita e
+              sigilosa
+            </li>
+            <li className="text-success">Envie um email para cvv@cvv.org.br</li>
+            <li className="text-success">
+              Acesse o chat no site{" "}
+              <a target="_blank" href="https://www.cvv.org.br">
+                AQUI
+              </a>
+            </li>
+          </strong>
         </ul>
         <br></br>
         Não hesite em buscar ajuda quando precisar. O CVV está aqui para te
