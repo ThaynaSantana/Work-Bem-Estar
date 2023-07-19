@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Calendar from "../component/Calendar";
 import ListaTodo from "../component/ListaTodo";
 import Profile from "../component/Profile";
+import Lembretes from "../component/Lembretes";
+import Rodape from "../layout/Rodape";
 
 interface TodoItem {
   id: number;
@@ -82,7 +84,11 @@ const Organizar: React.FC = () => {
         </div>
         <div>
           <div className="lista-container">
-            <ListaTodo todos={todos} deleteTodoItem={deleteTodoItem} />
+            <ListaTodo
+              todos={todos}
+              deleteTodoItem={deleteTodoItem}
+              name="Tarefas"
+            />
           </div>
           <div className="tarefas">
             <div className="agendar-container">
@@ -117,6 +123,8 @@ const Organizar: React.FC = () => {
           </div>
         </div>
       </div>
+      <Lembretes />
+      <Rodape />
     </>
   );
 };
