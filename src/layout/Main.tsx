@@ -4,12 +4,12 @@ const Main = () => {
   return (
     <main>
       <div id="circle">
+        <img src="marca3.png"></img>
         <h3>
-          AVANCE COM SUA<br></br> PRODUTIVIDADE<br></br> COM AS<br></br>{" "}
-          FERRAMENTAS<br></br> CERTAS
+        " Por vezes, é cuidando da saúde mental que a gente cuida do resto do nosso corpo. " 🧘‍♀️
         </h3>
         <Link to="/organizar">
-          <button className="btn btn-primary">Agende suas tarefas</button>
+          <button className="btn btn-success">Agende suas tarefas</button>
         </Link>
       </div>
     </main>

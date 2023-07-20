@@ -16,7 +16,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border-bottom: 0.5rem solid #63f2be;
+  border-bottom: 0.4rem solid #63f2be;
 }
 
 #logo {
@@ -80,21 +80,26 @@ nav a:hover {
 main {
   width: 100%;
   height: 40rem;
-  background-image: url("https://images.pexels.com/photos/7658388/pexels-photo-7658388.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-position-x: 400%;
+  background-position: right;
+  background-image: url("https://images.pexels.com/photos/204686/pexels-photo-204686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 }
 
 main #circle {
-  background-color: #6d8c81;
+  background-color: #5be9badc;
   width: 35rem;
   height: 100%;
-  border-radius: 0 40% 40% 0;
+  border-radius: 0 20rem 20rem 0;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 5rem;
   gap: 1rem;
+}
+
+#circle img {
+  width: 25rem;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.171);
 }
 
 #circle h3 {
@@ -193,13 +198,16 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  background-color: rgb(186, 192, 204);
   border-radius: 2rem;
   padding: 1rem;
   gap: 1rem;
-  color: #fafafa;
+}
+
+.emoji label {
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.774);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 #avatar {
@@ -218,7 +226,7 @@ li {
 }
 
 .status meter {
-  height: 1.5rem;
+  height: 2rem;
 }
 
 .perfil button {
@@ -229,10 +237,6 @@ li {
   font-weight: bolder;
   color: #fafafa;
 }
-
-/* .perfil button:hover {
-  background-color: #4ec79a;
-} */
 
 #status {
   width: 40px;
@@ -354,13 +358,12 @@ li {
 
 .status-page {
   display: flex;
+  padding: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
-  background-repeat: repeat;
-  background-position: top;
-  height: 100vh;
+  gap: 3rem;
+  background-image: radial-gradient(#7ce0e0, #5ad4a7);
 }
 
 #title-status-page {
@@ -368,7 +371,7 @@ li {
   color: black;
   padding: 1rem;
   border-radius: 30px;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -480,4 +483,98 @@ table {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+#calendario-emotion {
+  display: flex;
+  flex-direction: column;
+  width: 35rem;
+  border: 2px solid gray;
+  background-color: white;
+}
+
+#calendario-emotion thead tr {
+  background-color: #63f2be;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.452);
+  margin-bottom: 5px;
+  font-weight: bold;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 2rem;
+  justify-content: space-around;
+}
+
+#calendario-emotion tbody tr {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-around;
+  border-top: 1px solid rgba(128, 128, 128, 0.774);
+  border-bottom: 1px solid gray;
+  font-size: 4rem;
+}
+
+#calendario-emotion label {
+  font-size: 1.4rem;
+}
+
+.lembretes {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.lembretes .item {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  padding: 1rem;
+  width: 35rem;
+  justify-content: center;
+  border-bottom: 4px solid #63f2be;
+}
+
+.item svg {
+  fill: #fafafa;
+}
+
+.lembretes .menu {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  padding: 1rem;
+  width: 35rem;
+  justify-content: center;
+}
+
+.menu input {
+  margin: 0;
+  font-size: 0.8rem;
+  width: 50rem;
+}
+
+/* Estilos do pop-up */
+.popup-container {
+  position: absolute;
+  max-width: 80%;
+  max-height: 80%;
+  background-color: rgba(0, 0, 0, 0.637);
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1rem 20rem rgba(0, 0, 0, 0.555);
+  text-align: center;
+}
+
+.popup-content p {
+  margin-bottom: 10px;
 }

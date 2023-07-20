@@ -34,8 +34,6 @@ const Emotion: React.FC<EmotionProps> = ({ status }) => {
     case "muito feliz":
       emoji = emojis.muitofeliz;
       break;
-    default:
-      emoji = emojis.feliz;
   }
 
   return <p id="emoji">{emoji}</p>;

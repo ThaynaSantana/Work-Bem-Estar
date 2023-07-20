@@ -22,19 +22,19 @@ const EmotionMenu: React.FC<EmotionMenuProps> = ({ onSelectEmotion }) => {
       </div>
       <div className="emoji">
         <button onClick={() => handleEmotionSelect("triste")}>😢</button>
-        <label>Triste</label>
+        <label>Mal</label>
       </div>
       <div className="emoji">
         <button onClick={() => handleEmotionSelect("neutro")}>😐</button>
-        <label>Neutro</label>
+        <label>Mais ou Menos</label>
       </div>
       <div className="emoji">
         <button onClick={() => handleEmotionSelect("feliz")}>😄</button>
-        <label>Feliz</label>
+        <label>Bem</label>
       </div>
       <div className="emoji">
         <button onClick={() => handleEmotionSelect("muito feliz")}>😆</button>
-        <label>Muito Feliz!</label>
+        <label>Muito bem!</label>
       </div>
     </div>
   );

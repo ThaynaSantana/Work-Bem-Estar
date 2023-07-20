@@ -9,6 +9,7 @@ interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
   const [showMenu, setShowMenu] = useState(true);
   const [buttonStyle, setButtonStyle] = useState("exit-button");
+  const [meterInput, setMeterInput] = useState(3)
 
   const toggleMenu = () => {
     setShowMenu((prevState) => !prevState);
@@ -23,6 +24,33 @@ const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
     }
   };
 
+  const switchValueMeter = () => {
+    switch (currentEmotion) {
+      case "bravo":
+        setMeterInput(1)
+        break;
+      case "triste":
+        setMeterInput(2)
+        break;
+      case "neutro":
+        setMeterInput(3)
+        break;
+      case "feliz":
+        setMeterInput(4)
+        break;
+      case "muito feliz":
+        setMeterInput(5)
+        break;
+      default:
+        setMeterInput(5)      
+    }
+  }
+
+   // Atualize o valor do meterInput quando o currentEmotion for alterado
+   React.useEffect(() => {
+    switchValueMeter();
+  }, [currentEmotion]);
+
   return (
     <>
       <div id="menu">
@@ -36,7 +64,7 @@ const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
             <h3>Olá, Elis Menezes!</h3>
             <p>Educadora Senac</p>
             <div className="status">
-              <meter min="1" max="5" value="4"></meter>
+              <meter min="1" max="5" value={meterInput}></meter>
               <Emotion status={currentEmotion ?? ""} />
             </div>
             <Link className="btn-perfil" to="/meditar">

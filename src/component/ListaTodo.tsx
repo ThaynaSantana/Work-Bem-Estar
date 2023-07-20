@@ -9,9 +9,10 @@ interface TodoItem {
 interface ListaTodoProps {
   todos: TodoItem[];
   deleteTodoItem: (itemId: number) => void;
+  name: string;
 }
 
-const ListaTodo: React.FC<ListaTodoProps> = ({ todos, deleteTodoItem }) => {
+const ListaTodo: React.FC<ListaTodoProps> = ({ todos, deleteTodoItem, name }) => {
   return (
     <div className="table-lista table-responsive">
       <h2>
@@ -33,14 +34,14 @@ const ListaTodo: React.FC<ListaTodoProps> = ({ todos, deleteTodoItem }) => {
             d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"
           />
         </svg>
-        Tarefas
+        {name}
       </h2>
       <table className="table table-hover table-bordered">
         <thead className="thead-dark table-info">
           <tr>
             <th scope="col">Hora</th>
             <th scope="col">Tarefa</th>
-            <th scope="col">Ação</th>
+            <th scope="col">Status</th>
           </tr>
         </thead>
         <tbody>
