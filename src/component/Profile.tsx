@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Emotion, { EmotionProps } from "./Emotion";
+import Emotion from "./Emotion";
 
 interface ProfileProps {
   currentEmotion?: string;
 }
 
 const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
+
   const [showMenu, setShowMenu] = useState(true);
   const [buttonStyle, setButtonStyle] = useState("exit-button");
-  const [meterInput, setMeterInput] = useState(3)
 
   const toggleMenu = () => {
     setShowMenu((prevState) => !prevState);
@@ -17,39 +17,8 @@ const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
   };
 
   const switchStyleButton = () => {
-    if (buttonStyle === "exit-button") {
-      setButtonStyle("open-button");
-    } else {
-      setButtonStyle("exit-button");
-    }
+    setButtonStyle(prevStyle => (prevStyle === "exit-button" ? "open-button" : "exit-button"));
   };
-
-  const switchValueMeter = () => {
-    switch (currentEmotion) {
-      case "bravo":
-        setMeterInput(1)
-        break;
-      case "triste":
-        setMeterInput(2)
-        break;
-      case "neutro":
-        setMeterInput(3)
-        break;
-      case "feliz":
-        setMeterInput(4)
-        break;
-      case "muito feliz":
-        setMeterInput(5)
-        break;
-      default:
-        setMeterInput(5)      
-    }
-  }
-
-   // Atualize o valor do meterInput quando o currentEmotion for alterado
-   React.useEffect(() => {
-    switchValueMeter();
-  }, [currentEmotion]);
 
   return (
     <>
@@ -64,7 +33,7 @@ const Profile: React.FC<ProfileProps> = ({ currentEmotion }) => {
             <h3>Olá, Elis Menezes!</h3>
             <p>Educadora Senac</p>
             <div className="status">
-              <meter min="1" max="5" value={meterInput}></meter>
+              <strong>Status:</strong>
               <Emotion status={currentEmotion ?? ""} />
             </div>
             <Link className="btn-perfil" to="/meditar">

@@ -223,11 +223,9 @@ li {
   justify-content: right;
   align-items: center;
   vertical-align: center;
+  gap: 0.2rem;
 }
 
-.status meter {
-  height: 2rem;
-}
 
 .perfil button {
   padding: 0.5rem 2rem;
@@ -576,4 +574,9 @@ table {
 
 .popup-content p {
   margin-bottom: 10px;
+}
+
+#cvv-image {
+  height: 25rem;
+  margin: 0 25vw;
 }

@@ -18,7 +18,7 @@ const Meditar: React.FC = () => {
 
   const startBreathing = () => {
     setCountdown(5);
-    setSteps(["Respirar...", "Inspirar...", "Respirar..."]);
+    setSteps(["Expirar...", "Inspirar...", "Expirar...", "Inspirar..."]);
   };
 
   useEffect(() => {
