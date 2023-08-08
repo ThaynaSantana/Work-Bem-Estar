@@ -5,6 +5,7 @@ const Ajuda = () => {
   return (
     <>
       <Profile />
+      <img id="cvv-image" src="https://upload.wikimedia.org/wikipedia/commons/1/19/CVV_-_logo_azul.jpg" />
       <p className="ajuda-p">
         Se você está passando por momentos difíceis e precisa de apoio emocional
         ou prevenção do suicídio, saiba que você não está sozinho. O Centro de
@@ -22,13 +23,13 @@ const Ajuda = () => {
         Para entrar em contato com o CVV:<br></br>
         <br></br>
         <ul>
-          <strong>
-            <li className="text-success">
+          <strong >
+            <li className="text-dark">
               Ligue para <a href="tel:+55188">188</a> ligação gratuita e
               sigilosa
             </li>
-            <li className="text-success">Envie um email para cvv@cvv.org.br</li>
-            <li className="text-success">
+            <li className="text-dark">Envie um email para cvv@cvv.org.br</li>
+            <li className="text-dark">
               Acesse o chat no site{" "}
               <a target="_blank" href="https://www.cvv.org.br">
                 AQUI
